@@ -71,6 +71,9 @@ module.exports = (env) => {
         ),
         'process.env.FIREBASE_APP_ID': JSON.stringify(
           process.env.FIREBASE_APP_ID
+        ),
+        'process.env.GIANTBOMB_API_KEY': JSON.stringify(
+          process.env.GIANTBOMB_API_KEY
         )
       })
     ],
