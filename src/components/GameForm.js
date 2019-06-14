@@ -1,5 +1,6 @@
 import React from 'react';
 import { SingleDatePicker } from 'react-dates';
+import axios from 'axios';
 
 export default class GameForm extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class GameForm extends React.Component {
       platform: props.game ? props.game.platform : '',
       release: props.game ? props.game.release : '',
       genre: props.game ? props.game.genre : '',
+      genresArray: [],
       error: ''
     };
   }
@@ -52,6 +54,18 @@ export default class GameForm extends React.Component {
     }
   };
 
+  async componentDidMount() {
+    try {
+      const genres = await axios.get('/gbapi');
+      this.setState(() => ({
+        genresArray: genres.data
+      }));
+    } catch (err) {
+      console.error(err.message);
+      console.log('Error in GameForm component');
+    }
+  }
+
   render() {
     return (
       <form className="form" onSubmit={this.onSubmit}>
@@ -78,15 +92,19 @@ export default class GameForm extends React.Component {
           value={this.state.release}
           onChange={this.onReleaseChange}
         />
-        <input
-          type="text"
-          placeholder="Genre"
-          className="text-input"
-          value={this.state.genre}
+        <select
+          className="select"
           onChange={this.onGenreChange}
-        />
+          value={this.state.genre}
+        >
+          {this.state.genresArray.map((genre) => (
+            <option key={genre.name} value={genre.name}>
+              {genre.name}
+            </option>
+          ))}
+        </select>
         <div>
-          <button className="button">Save Game</button>
+          <button className="button">Save Game!</button>
         </div>
       </form>
     );
