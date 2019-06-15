@@ -61,8 +61,7 @@ export default class GameForm extends React.Component {
         genresArray: genres.data
       }));
     } catch (err) {
-      console.error(err.message);
-      console.log('Error in GameForm component');
+      console.error('Error fetching from Giant Bomb API');
     }
   }
 
