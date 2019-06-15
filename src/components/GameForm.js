@@ -67,45 +67,53 @@ export default class GameForm extends React.Component {
 
   render() {
     return (
-      <form className="form" onSubmit={this.onSubmit}>
-        {this.state.error && <p className="form__error">{this.state.error}</p>}
-        <input
-          type="text"
-          placeholder="Title"
-          autoFocus
-          className="text-input"
-          value={this.state.title}
-          onChange={this.onTitleChange}
-        />
-        <input
-          type="text"
-          placeholder="Platform"
-          className="text-input"
-          value={this.state.platform}
-          onChange={this.onPlatformChange}
-        />
-        <input
-          type="number"
-          placeholder="Release Year"
-          className="text-input"
-          value={this.state.release}
-          onChange={this.onReleaseChange}
-        />
-        <select
-          className="select"
-          onChange={this.onGenreChange}
-          value={this.state.genre}
-        >
-          {this.state.genresArray.map((genre) => (
-            <option key={genre.name} value={genre.name}>
-              {genre.name}
+      <div>
+        <form className="form" onSubmit={this.onSubmit}>
+          {this.state.error && (
+            <p className="form__error">{this.state.error}</p>
+          )}
+          <input
+            type="text"
+            placeholder="Title"
+            autoFocus
+            className="text-input"
+            value={this.state.title}
+            onChange={this.onTitleChange}
+          />
+          <input
+            type="text"
+            placeholder="Platform"
+            className="text-input"
+            value={this.state.platform}
+            onChange={this.onPlatformChange}
+          />
+          <input
+            type="number"
+            placeholder="Release Year"
+            className="text-input"
+            value={this.state.release}
+            onChange={this.onReleaseChange}
+          />
+          <select
+            className="select"
+            placeholder="Genre"
+            onChange={this.onGenreChange}
+            value={this.state.genre}
+          >
+            <option value="" disabled selected>
+              Genre
             </option>
-          ))}
-        </select>
-        <div>
-          <button className="button">Save Game!</button>
-        </div>
-      </form>
+            {this.state.genresArray.map((genre) => (
+              <option key={genre.name} value={genre.name}>
+                {genre.name}
+              </option>
+            ))}
+          </select>
+          <div>
+            <button className="button">Save Game!</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }
