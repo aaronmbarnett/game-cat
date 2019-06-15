@@ -27,7 +27,7 @@ export default class GameForm extends React.Component {
   };
 
   onReleaseChange = (e) => {
-    const release = e.target.value;
+    const release = parseInt(e.target.value);
     this.setState(() => ({ release }));
   };
 
