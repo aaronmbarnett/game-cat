@@ -9,7 +9,7 @@ export class EditGamePage extends Component {
     super(props);
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: undefined
     };
   }
   onSubmit = (game) => {
@@ -24,8 +24,13 @@ export class EditGamePage extends Component {
   };
 
   handleOpenModal = () => {
-    console.log('modal button!');
     this.setState(() => ({ modalIsOpen: !this.state.modalIsOpen }));
+  };
+
+  handleClearModal = () => {
+    this.setState(() => ({
+      modalIsOpen: !this.state.modalIsOpen
+    }));
   };
 
   render() {
@@ -49,6 +54,7 @@ export class EditGamePage extends Component {
         <DeleteGameModal
           modalIsOpen={this.state.modalIsOpen}
           onRemove={this.onRemove}
+          handleClearModal={this.handleClearModal}
         />
       </div>
     );

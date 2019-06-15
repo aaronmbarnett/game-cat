@@ -28,3 +28,12 @@
     border: none;
   }
 }
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .button {
+    margin-bottom: 10px;
+  }
+}

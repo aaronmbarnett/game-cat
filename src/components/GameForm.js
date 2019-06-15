@@ -96,11 +96,10 @@ export default class GameForm extends React.Component {
           />
           <select
             className="select"
-            placeholder="Genre"
             onChange={this.onGenreChange}
             value={this.state.genre}
           >
-            <option value="" disabled selected>
+            <option value="" selected disabled>
               Genre
             </option>
             {this.state.genresArray.map((genre) => (
