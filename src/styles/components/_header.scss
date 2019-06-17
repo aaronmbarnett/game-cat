@@ -1,7 +1,7 @@
 .header {
-  background: $red;
-  background: linear-gradient(162deg, $red 0%, $dark-blue 35%, $light-red 85%);
-  border-bottom: $dark-blue solid 3px;
+  // background: $red;
+  // background: linear-gradient(162deg, $red 0%, $dark-blue 35%, $light-red 85%);
+  border-bottom: rgba($dark-blue, 0.5) solid 3px;
 }
 
 .header__content {

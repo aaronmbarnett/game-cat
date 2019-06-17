@@ -8,8 +8,10 @@ html {
 
 body {
   color: $dark-grey;
-  background-color: $light-blue;
-  font-family: Helvetica, Arial, sans-serif;
+  background: linear-gradient(20deg, $light-blue, $dark-blue);
+  // background-color: $light-blue;
+  font-family: 'Robot', sans-serif;
+  min-height: 100vh;
   font-size: $m-size;
   line-height: 1.6;
 }

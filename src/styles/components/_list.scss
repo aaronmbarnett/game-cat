@@ -1,7 +1,7 @@
 .list-header {
-  background: $light-blue;
+  // background: $light-blue;
   border: 1px solid darken($off-white, 7%);
-  color: $grey;
+  color: $off-white;
   display: flex;
   justify-content: space-between;
   padding: $s-size $m-size;
@@ -55,7 +55,7 @@
 }
 
 .list-item__sub-title {
-  color: $grey;
+  color: $dark-grey;
   font-size: $font-size-small;
 }
 
